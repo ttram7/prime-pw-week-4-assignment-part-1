@@ -18,13 +18,14 @@ function helloName( name ) {
   return `Hello, ${name}!`;
 }
 // Remember to call the function to test
-console.log(helloName('Bob'));
+console.log('Testing helloName function:',helloName('Bob'));
 
 // 3. Function to add two numbers together & return the result
 function addNumbers( firstNumber, secondNumber ) {
   return firstNumber + secondNumber;
 }
 console.log('The sum of two numbers is:',addNumbers(3,9));
+
 
 // 4. Function to multiply three numbers & return the result
 function multiplyThree(firstNum, secondNum, thirdNum ){
@@ -55,15 +56,22 @@ function getLast( array ) {
 }
 console.log('Last item in array is:',getLast([5, 6, 7]));
 console.log('Last item in array is:',getLast(['apples', 'lemons', 'oranges']));
-console.log('Last item in array is:',getLast([]));
+console.log('Last item in an empty array is:',getLast([]));
 
 // 7. Function to find a value in an array. Return true if the 
 //    value is found and false otherwise. Use a loop;
 //    DO NOT use Array.includes, Array.indexOf, or Array.find 
 function find( value, array ){
-  
+  for (let i = 0; i < array.length; i++){
+    if (value === array[i]) {
+      return true;
+    } 
+  }
+  return false;
 }
 
+console.log('Value found array - should say true:',find(2,[3,7,9,2,6]));
+console.log('Value not found in array - should say false:', find('bears', ['cats', 'dogs', 'hamsters']));
 // ----------------------
 // Stretch Goals
 // ----------------------
